@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>MTG Duel Life Total</title>
+ <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+ <div class="burger"><span></span><span></span><span></span></div>
+ <nav class="on box bgcNone">
+  <div class="boxN1 player1 mainBox rot180"><button class="ONE LifeLink"></button>
+   <div class="boxBGpan"><button ondblclick="bgP11()"></button><button ondblclick="bgP12()"></button><button
+     ondblclick="bgP13()"></button><button ondblclick="bgP14()"></button><button ondblclick="bgP15()"></button>
+   </div>
+  </div>
+  </div>
+  <div class="boxN2 player2 mainBox"><button class="TWO LifeLink"></button>
+   <div class="boxBGpan"><button ondblclick="bgP21()"></button><button ondblclick="bgP22()"></button><button
+     ondblclick="bgP23()"></button><button ondblclick="bgP24()"></button><button ondblclick="bgP25()"></button>
+   </div>
+  </div>
+ </nav>
+ <div class="box">
+  <div class="box1 player1 mainBox bgcArt bgP1 rot180"><span Class="ONE LifeDisp">20</span><button
+    class="ONE plus1"></button><button class="ONE min1"></button></div>
+  <div class="box2 player2 mainBox bgcArt bgP2"><span Class="TWO LifeDisp">20</span><button
+    class="TWO plus1"></button><button class="TWO min1"></button></div>
+ </div>
+ <div class="LifeTotal"><button class="rottator1"></button><button class="rottator2"></button><button
+   class="on LifeTotal20">20</button><button class="on LifeTotal40">40</button><button class="on goFS"></button>
+ </div>
+ <script>
+  /touch
+   / Fullscreen
+  onst goFS = document.querySelector(".goFS");
+  oFS.addEventListener("dblclick", () => {
+   f(document.fullscreenElement) {
+    ocument.exitFullscreen()
+    then(() => console.log("Document Exited form Full screen mode"))
+      catch ((err) => console.error(err))
+     else {
+   ocument.documentElement.requestFullscreen()
+    
+   );
+
+   / burger menu
+   onst burger = document.querySelector(".burger");
+   onst nav = document.querySelector("nav");
+
+
+
+   / player
+   onst box1 = document.querySelector(".box1");
+   onst box2 = document.querySelector(".box2");
+   onst boxN1 = document.querySelector(".boxN1");
+   onst boxN2 = document.querySelector(".boxN2");
+   onst Life1 = document.querySelector(".ONE.LifeDisp");
+   onst life1plus1 = document.querySelector(".ONE.plus1");
+   onst life1min1 = document.querySelector(".ONE.min1");
+   onst lifeLink1 = document.querySelector(".ONE.LifeLink");
+   onst Life2 = document.querySelector(".TWO.LifeDisp");
+   onst life2plus1 = document.querySelector(".TWO.plus1");
+   onst life2min1 = document.querySelector(".TWO.min1");
+   onst lifeLink2 = document.querySelector(".TWO.LifeLink");
+   onst rottator1 = document.querySelector(".rottator1");
+   onst rottator2 = document.querySelector(".rottator2");
+   onst LifeTotal_20 = document.querySelector(".LifeTotal20");
+   onst LifeTotal_40 = document.querySelector(".LifeTotal40");
+
+   et counter1 = 20;
+   et counter2 = 20;
+   et pcounter1 = 0;
+   et pcounter2 = 0;
+   et LAND1 = 60;
+   et LAND2 = 60;
+
+   urger.addEventListener("click", () => {
+    urger.classList.toggle("on");
+    av.classList.toggle("on");
+    ifeTotal_20.classList.toggle("on");
+    ifeTotal_40.classList.toggle("on");
+    ife1plus1.classList.toggle("on");
+    ife2plus1.classList.toggle("on");
+    ife1min1.classList.toggle("on");
+    ife2min1.classList.toggle("on");
+    oFS.classList.toggle("on");
+   )
+
+    / player1
+   ottator1.addEventListener("dblclick", () => {
+    ox1.classList.toggle("rot180");
+    oxN1.classList.toggle("rot180");
+   )
+   ife1plus1.addEventListener("click", () => {
+    ounter1 = counter1 + 1;
+    ife1.textContent = counter1;
+   )
+   ife1min1.addEventListener("click", () => {
+    ounter1 = counter1 - 1;
+    ife1.textContent = counter1;
+   )
+   ifeLink1.addEventListener("click", () => {
+    ounter1 = counter1 + 1;
+    ife1.textContent = counter1;
+    ounter2 = counter2 - 1;
+    ife2.textContent = counter2;
+   )
+    / player2
+   ottator2.addEventListener("dblclick", () => {
+    ox2.classList.toggle("rot180");
+    oxN2.classList.toggle("rot180");
+   )
+   ife2plus1.addEventListener("click", () => {
+    ounter2 = counter2 + 1;
+    ife2.textContent = counter2;
+    AND2 = LAND2 - 2;
+    ocument.querySelector(".bgP2").style.backgroundPosition = `${LAND2 + '%'} 0`
+   )
+   ife2min1.addEventListener("click", () => {
+    ounter2 = counter2 - 1;
+    ife2.textContent = counter2;
+    AND2 = LAND2 + 2;
+    ocument.querySelector(".bgP2").style.backgroundPosition = `${LAND2 + '%'} 0`
+   )
+   ifeLink2.addEventListener("click", () => {
+    ounter1 = counter1 - 1;
+    ife1.textContent = counter1;
+    ounter2 = counter2 + 1;
+    ife2.textContent = counter2;
+   )
+
+    / Life Total
+   ifeTotal_20.addEventListener("dblclick", () => {
+    ounter1 = 20;
+    ife1.textContent = counter1;
+    ounter2 = 20;
+    ife2.textContent = counter2;
+    et LAND1 = 60;
+    et LAND2 = 60;
+    ocument.querySelector(".bgP2").style.backgroundPosition = `${LAND2 + '%'} 0`
+    ocument.querySelector(".bgP1").style.backgroundPosition = `${LAND1 + '%'} 0`
+   )
+   ifeTotal_40.addEventListener("dblclick", () => {
+    ounter1 = 40;
+    ife1.textContent = counter1;
+    ounter2 = 40;
+    ife2.textContent = counter2;
+    et LAND1 = 40;
+    et LAND2 = 40;
+    ocument.querySelector(".bgP2").style.backgroundPosition = `${LAND2 + '%'} 0`
+    ocument.querySelector(".bgP1").style.backgroundPosition = `${LAND1 + '%'} 0`
+   )
+ </script>
+</body>
+
+</html>
